@@ -33,14 +33,38 @@ These extends are required:
 - Choose an **OGDS database**, such as:
   - ``ogds-postgres.cfg``
   - ``ogds-mysql.cfg``
+- Amount of **ZEO-clients**:
+  If you want more than one ZEO client you need to extend a client configuration
+  from [ftw-buildout's `zeoclients` folder](https://github.com/4teamwork/ftw-buildouts/tree/master/zeoclients)
 - A local or a shared **Tika**:
   - local: ftw-buildout's
     [tika-jaxrs-server.cfg](https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/tika-jaxrs-server.cfg)
   - shared: *to be implemented*
-- Amount of **ZEO-clients**:
-  If you want more than one ZEO client you need to extend a client configuration
-  from [ftw-buildout's `zeoclients` folder](https://github.com/4teamwork/ftw-buildouts/tree/master/zeoclients)
 - Choose a GEVER version by extending the [**KGS**](http://kgs.4teamwork.ch/release/opengever/)
+
+
+### Example configuration
+
+Assuming we have a policy package ``gever.hinterfultigen``, we would add a deployment
+configuration directly in this policy package.
+Lets name the buildout configuration
+``deployment-artemis-19-hinterfultigen.onegovgever.ch``:
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/ogds-postgres.cfg
+    https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/zeoclients/4.cfg
+    https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/tika-jaxrs-server.cfg
+    http://kgs.4teamwork.ch/release/opengever/3.6.0
+
+deployment-number = 19
+ogds-db-name = gever-hinterfultigen
+client-policy = gever.hinterfultigen
+instance-eggs += gever.hinterfultigen
+develop = .
+```
 
 
 

@@ -62,6 +62,7 @@ extends =
 deployment-number = 19
 ogds-db-name = gever-hinterfultigen
 client-policy = gever.hinterfultigen
+usernamelogger_ac_cookie_name = __ac_hinterfultigen
 instance-eggs += gever.hinterfultigen
 develop = .
 ```
@@ -87,6 +88,8 @@ such as:
 - `buildout:deployment-number`: deployment number, prefixing all ports
 - `buildout:client-policy`: dotted name to the client policy; its ZCML will be
   loaded automatically
+- `usernamelogger_ac_cookie_name`: (optional) `__ac` cookie name, defaults to
+  `__ac`.
 
 **Example:**
 

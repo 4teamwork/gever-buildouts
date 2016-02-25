@@ -40,6 +40,7 @@ These extends are required:
 - Amount of **ZEO-clients**:
   If you want more than one ZEO client you need to extend a client configuration
   from [ftw-buildout's `zeoclients` folder](https://github.com/4teamwork/ftw-buildouts/tree/master/zeoclients)
+- Choose a GEVER version by extending the [**KGS**](http://kgs.4teamwork.ch/release/opengever/)
 
 
 

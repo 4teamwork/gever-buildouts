@@ -54,7 +54,7 @@ such as:
 ```ini
 [buildout]
 extends =
-    https://github.com/4teamwork/ftw-buildouts/blob/master/production.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
 deployment-number = 32
 ogds-db-name = onegovgever-buildoutdemo
 ```

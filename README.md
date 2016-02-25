@@ -114,3 +114,21 @@ ogds-db-name = onegovgever-hinterfultigen
 ogds-db-user = onegovgever-hinterfultigen
 ogds-db-pw = PasswordF0rWhat?
 ```
+
+
+## [standard-sources.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/standard-sources.cfg)
+
+The ``standard-sources.cfg`` is automatically included by the
+``standard-deployment.cfg`` and makes sure that ``mr.developer`` is used and is
+configured so that the standard deployment checkouts are applied.
+
+Features:
+
+- includes all public sources from [plonesource.org](http://plonesource.org)
+- includes private sources [from our KGS](http://kgs.4teamwork.ch/sources.cfg)
+- activates the `mr.developer` extension
+- declares a ``buildout:deployment-checkouts`` variable, which contains all
+  sources which have to be checked out on productive deployments; this list is
+  automatically added to ``auto-checkout`` by default
+- includes our PSC as source (find-links, authentication); this must be done
+  here in order to avoid problems with buildout

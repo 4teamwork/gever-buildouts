@@ -12,7 +12,7 @@ Actual deployment buildouts should be placed in the project repository.
 
 
 
-## Deployment buildout
+## Deployment Buildout
 
 For creating a buildout config for deploying a GEVER, you can include various
 configuration blocks from `gever-buildouts` via HTTP buildout extends in order
@@ -23,7 +23,7 @@ usually in buildout variables of the main `[buildout]` section.
 
 
 
-### Required blocks
+### Required Blocks
 
 For a GEVER to work, you must include certain configuration blocks by extending
 the buildouts, others are optional.
@@ -43,7 +43,7 @@ These extends are required:
 - Choose a GEVER version by extending the [**KGS**](http://kgs.4teamwork.ch/release/opengever/)
 
 
-### Example configuration
+### Example Configuration
 
 Assuming we have a policy package ``gever.hinterfultigen``, we would add a deployment
 configuration directly in this policy package.

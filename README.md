@@ -33,7 +33,10 @@ These extends are required:
 - Choose an OGDS database, such as:
   - ``ogds-postgres.cfg``
   - ``ogds-mysql.cfg``
-
+- A local or a shared tika:
+  - local: ftw-buildout's
+    [tika-jaxrs-server.cfg](https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/tika-jaxrs-server.cfg)
+  - shared: *to be implemented*
 
 
 

@@ -40,7 +40,9 @@ These extends are required:
   - local: ftw-buildout's
     [tika-jaxrs-server.cfg](https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/tika-jaxrs-server.cfg)
   - shared: *to be implemented*
-- Choose a GEVER version by extending the [**KGS**](http://kgs.4teamwork.ch/release/opengever/)
+- Choose a GEVER version by extending the
+  [**KGS**](http://kgs.4teamwork.ch/release/opengever/) - or you may use the
+  `source-master.cfg` (see below)
 
 
 ### Example Configuration
@@ -159,3 +161,28 @@ Features:
   automatically added to ``auto-checkout`` by default
 - includes our PSC as source (find-links, authentication); this must be done
   here in order to avoid problems with buildout
+
+
+## [source-master.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/source-master.cfg): Development- / Source-Deployments
+
+Some deployments need to deploy `opengever.core` from source, which should include
+using the source-version of all packages which are in the `auto-checkout` list of
+`opengever.core`.
+Such deployments must also use the `develop`-KGS.
+
+For these deployments, the `source-master.cfg` can be included _instead of a
+KGS_.
+
+Example:
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
+....
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/source-master.cfg
+```
+
+**WARNING:** The sources of the `master`-branch is extended because we cannot
+  use the branch variable in the `extends`. You need to write your own
+  `source-master.cfg` if you need to deploy another branch.

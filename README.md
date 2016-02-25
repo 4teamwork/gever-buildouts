@@ -11,6 +11,7 @@ which can be put together to have buildout.
 Actual deployment buildouts should be placed in the project repository.
 
 
+
 ## Deployment buildout
 
 For creating a buildout config for deploying a GEVER, you can include various
@@ -20,6 +21,8 @@ to have certain features.
 Each configuration file may require you to set certain configuration values,
 usually in buildout variables of the main `[buildout]` section.
 
+
+
 ### Required blocks
 
 For a GEVER to work, you must include certain configuration blocks by extending
@@ -27,6 +30,11 @@ the buildouts, others are optional.
 These extends are required:
 
 - ``standard-deployment.cfg``: Contains the basic deployment configuration.
+- Choose an OGDS database, such as:
+  - ``ogds-postgres.cfg``
+  - ``ogds-mysql.cfg``
+
+
 
 
 ## [standard-deployment.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/standard-deployment.cfg)
@@ -55,6 +63,47 @@ such as:
 [buildout]
 extends =
     https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
-deployment-number = 32
-ogds-db-name = onegovgever-buildoutdemo
+deployment-number = 12
+client-policy = opengever.demo.fd
+```
+
+
+## [ogds-postgres.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/ogds-postgres.cfg)
+
+Uses PostgreSQL as database.
+Be aware that the used database user is the same as the OS user.
+
+**Variables:**
+- `buildout:ogds-db-name`: name of the database
+
+**Example:**
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/ogds-postgres.cfg
+ogds-db-name = onegovgever-hinterfultigen
+```
+
+
+## [ogds-mysql.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/ogds-mysql.cfg)
+
+Uses MySQL as database.
+
+**Variables:**
+- `buildout:ogds-db-name`: name of the database
+- `buildout:ogds-db-user`: MySQL username
+- `buildout:ogds-db-pw`: MySQL password
+
+**Example:**
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/ogds-mysql.cfg
+ogds-db-name = onegovgever-hinterfultigen
+ogds-db-user = onegovgever-hinterfultigen
+ogds-db-pw = PasswordF0rWhat?
 ```

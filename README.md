@@ -36,9 +36,8 @@ These extends are required:
 - Amount of **ZEO-clients**:
   If you want more than one ZEO client you need to extend a client configuration
   from [ftw-buildout's `zeoclients` folder](https://github.com/4teamwork/ftw-buildouts/tree/master/zeoclients)
-- A local or a shared **Tika**:
-  - local: ftw-buildout's
-    [tika-jaxrs-server.cfg](https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/tika-jaxrs-server.cfg)
+- A standalone or a shared **Tika**:
+  - standalone: [tika-standalone.cfg](https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/tika-standalone.cfg)
   - shared: *to be implemented*
 - Choose a GEVER version by extending the
   [**KGS**](http://kgs.4teamwork.ch/release/opengever/) - or you may use the
@@ -142,6 +141,18 @@ extends =
 ogds-db-name = onegovgever-hinterfultigen
 ogds-db-user = onegovgever-hinterfultigen
 ogds-db-pw = PasswordF0rWhat?
+```
+
+
+## [tika-standalone.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/tika-standalone.cfg)
+
+Use a standalone Tika server for this deployment.
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/tika-standalone.cfg
 ```
 
 

@@ -30,13 +30,16 @@ the buildouts, others are optional.
 These extends are required:
 
 - ``standard-deployment.cfg``: Contains the basic deployment configuration.
-- Choose an OGDS database, such as:
+- Choose an **OGDS database**, such as:
   - ``ogds-postgres.cfg``
   - ``ogds-mysql.cfg``
-- A local or a shared tika:
+- A local or a shared **Tika**:
   - local: ftw-buildout's
     [tika-jaxrs-server.cfg](https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/tika-jaxrs-server.cfg)
   - shared: *to be implemented*
+- Amount of **ZEO-clients**:
+  If you want more than one ZEO client you need to extend a client configuration
+  from [ftw-buildout's `zeoclients` folder](https://github.com/4teamwork/ftw-buildouts/tree/master/zeoclients)
 
 
 

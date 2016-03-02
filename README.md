@@ -43,6 +43,11 @@ These extends are required:
   [**KGS**](http://kgs.4teamwork.ch/release/opengever/) - or you may use the
   `source-master.cfg` (see below)
 
+**Extensions:**
+
+- [Maintenance Server](https://github.com/4teamwork/ftw-buildouts#maintenance-http-server)
+
+
 
 ### Example Configuration
 

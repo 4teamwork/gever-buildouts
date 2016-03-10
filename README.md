@@ -70,6 +70,7 @@ ogds-db-name = gever-hinterfultigen
 client-policy = gever.hinterfultigen
 usernamelogger_ac_cookie_name = __ac_hinterfultigen
 instance-eggs += gever.hinterfultigen
+raven_tags = {"cluster": "hinterfultigen.onegovgever.ch"}
 develop = .
 ```
 
@@ -105,6 +106,7 @@ extends =
     https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
 deployment-number = 12
 client-policy = opengever.demo.fd
+raven_tags = {"cluster": "demo.onegovgever.ch"}
 ```
 
 

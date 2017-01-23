@@ -204,3 +204,66 @@ extends =
 **WARNING:** The sources of the `master`-branch is extended because we cannot
   use the branch variable in the `extends`. You need to write your own
   `source-master.cfg` if you need to deploy another branch.
+
+
+## [standard-dev.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/standard-dev.cfg)
+
+The `standard-dev.cfg` is a standard development config to be used in
+standardized GEVER policies. It may or may not be used by more sophisticated
+policies.
+
+The goal is to make the `development.cfg` in a standard GEVER policy as short as
+possible
+
+Usage example:
+```ini
+[buildout]
+extends =
+    test-policy.cfg
+    https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/plone-development.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-dev.cfg
+    https://raw.githubusercontent.com/4teamwork/ftw-buildouts/master/bumblebee.cfg
+
+ogds-db-name = opengeverftw
+```
+
+
+## [test-policy.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/test-policy.cfg)
+
+The `test-policy.cfg` tests whether policy development works with the
+`opengever.core` version installed in production.
+The GEVER version installed in production might not be the newest, therefore the
+test buildout in the policy package should extend a KGS version.
+
+This config is usually extended in a GEVER policy in a config file with the same
+name `test-policy.cfg`:
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/test-policy.cfg
+    versions.cfg
+
+package-name = opengever.ftw
+```
+
+
+## [test-core-development.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/test-core-development.cfg)
+
+The `test-core-development.cfg` tests whether the lastest `opengever.core`
+development still works with a policy.
+
+The goal is to notice when a change in `opengever.core` will break our policy so
+that an upgrade will be problematic in the future.
+This allows us to fix the problems when the knowledge is fresh, so that later
+updates will be easy.
+
+
+This config is usually extended in a GEVER policy in a config file with the same
+name `test-core-development.cfg`:
+
+```ini
+[buildout]
+extends = https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/test-core-development.cfg
+package-name = opengever.ftw
+```

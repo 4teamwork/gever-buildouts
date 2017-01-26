@@ -90,6 +90,9 @@ such as:
 - warmup: automatically warmup instances after start
 - `standard-sources.cfg` (see below)
 - standard eggs such as `opengever.maintenance` and `ftw.zopemaster`
+- sets up a [`bin/slacker`](https://github.com/4teamwork/ftw-buildouts#slack),
+  which requires a server-wide environment variable `$STANDARD_SLACK_WEBHOOK`
+  containing the slack hook url.
 
 **Variables:**
 - `buildout:deployment-number`: deployment number, prefixing all ports

@@ -166,6 +166,29 @@ extends =
 ```
 
 
+## [solr.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/solr.cfg)
+
+Installs Solr.
+This will install a Solr instance named ``solr`` which will be included in
+supervisor and configured in ZCML for the Plone instance. ``ftw.recipe.solr``
+will be instructed to read the Solr-Configuration from the ``opengever.core``
+egg's ``solr-conf`` directory.
+
+**Variables:**
+- `buildout:solr-core-name`: Name of the Solr core
+
+**Example:**
+
+```ini
+[buildout]
+extends =
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/standard-deployment.cfg
+    https://raw.githubusercontent.com/4teamwork/gever-buildouts/master/solr.cfg
+
+solr-core-name = ska-arch
+```
+
+
 ## [standard-sources.cfg](https://github.com/4teamwork/gever-buildouts/blob/master/standard-sources.cfg)
 
 The ``standard-sources.cfg`` is automatically included by the
